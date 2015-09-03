@@ -17,6 +17,8 @@
 
 package org.apache.spark.examples
 
+import java.nio.file.{FileSystems, Path}
+
 import scala.math.random
 
 import org.apache.spark._
@@ -35,5 +37,9 @@ object SparkPi {
     }.reduce(_ + _)
     println("Pi is roughly " + 4.0 * count / n)
     spark.stop()
+  }
+
+  def tester = {
+    val thing = FileSystems.getDefault().getPath("logs", "access.log");
   }
 }
